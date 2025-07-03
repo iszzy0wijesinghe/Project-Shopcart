@@ -1,0 +1,18 @@
+.loading-container {
+  position: fixed;              /* Changed to fixed to cover the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;                 /* Ensure full viewport width */
+  height: 100vh;                /* Ensure full viewport height */
+  background-color: rgba(248, 248, 248, 0.322);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;                /* High z-index to overlay other content */
+  backdrop-filter: blur(8px);
+}
+
+.box {
+  width: 300px;
+  height: 360px;
+}

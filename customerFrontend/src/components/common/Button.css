@@ -1,0 +1,117 @@
+/* Base Button Styles */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.062);
+  }
+  
+  /* Disabled state */
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Variant Styles */
+  
+  /* Primary Variant */
+  .button--primary {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000000;
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 44px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.2s;
+  }
+  .button--primary:hover:not(:disabled) {
+    background-color: #00000018; /* green-700 */
+  }
+  
+  /* Secondary Variant */
+  .button--secondary {
+    background-color: #e2e8f0; /* gray-200 */
+    color: #2d3748; /* gray-800 */
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  .button--secondary:hover:not(:disabled) {
+    background-color: #cbd5e0; /* gray-300 */
+  }
+  
+  /* Outline Variant */
+  .button--outline {
+    background-color: transparent;
+    border: 2px solid #38a169;
+    color: #38a169;
+    padding: 8px 18px;
+    border-radius: 4px;
+  }
+  .button--outline:hover:not(:disabled) {
+    background-color: #f0fff4; /* light green background */
+  }
+  
+  /* Danger Variant */
+  .button--danger {
+    background-color: #e53e3e; /* red-600 */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  .button--danger:hover:not(:disabled) {
+    background-color: #c53030; /* red-700 */
+  }
+  
+  /* Signup Variant - using provided style */
+  .signup-button-header {
+    background-color: var(--button-orange, #f97316);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 44px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.2s;
+  }
+  .signup-button-header:hover:not(:disabled) {
+    background-color: #794400;
+  }
+  
+  /* Size Options */
+  .button--small {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+  }
+  
+  .button--medium {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  .button--large {
+    padding: 14px 28px;
+    font-size: 1.125rem;
+  }
+  
+  /* Loader Icon Styles */
+  .button-loader {
+    margin-right: 8px;
+    /* simple spin animation */
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
