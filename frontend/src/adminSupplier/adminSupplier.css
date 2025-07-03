@@ -1,0 +1,322 @@
+/* Full-page background and centering */
+.admin-login-container-supplier {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7; 
+}
+
+/* Login Box Styling */
+.login-box-supplier {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+/* Logo Styling */
+.admin-logo-supplier {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Header */
+.login-box-supplier .h2-login-supplier {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+.login-box-supplier .login-input-supplier {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button */
+.login-box-supplier .submit-login-supplier {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-box-supplier .submit-login-supplier:hover {
+  background-color: #e65a00;
+}
+
+/* Error Text */
+.error-admin-login {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+
+.admin-dashboard-supplier {
+  margin-left: 250px;
+  padding: 20px;
+  max-height: calc(120vh - 70px);
+  overflow-y: hidden;
+}
+
+
+
+.admin-dashboard-supplier::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+
+.dashboard-title-admin-supplier {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+}
+
+.admin-dashboard-view-supp-table-wrapper {
+  background-color: white;
+  padding: 0.7rem;
+  border-radius: 15px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  max-height: 66vh;
+
+  /* Firefox */
+  scrollbar-width: thin;                     /* makes scrollbar thinner */
+  scrollbar-color: rgba(0,0,0,0.2) transparent;  /* thumb color + track color */
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+.admin-dashboard-view-supp-table-wrapper::-webkit-scrollbar {
+  width: 6px;     /* vertical scrollbar thickness */
+  height: 4px;    /* horizontal scrollbar height, if ever used */
+  
+}
+
+.admin-dashboard-view-supp-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;  /* or give it a subtle shade */
+}
+
+.admin-dashboard-view-supp-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.admin-dashboard-view-supp-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.3);
+}
+
+
+
+.button-grid-admin-supplier {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
+  gap: 50px;
+  justify-content: center;
+}
+
+.big-button-admin-supplier {
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 25px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-button-admin-supplier:hover {
+  background-color: #e65a00;
+}
+
+.big-button-admin-supplier svg {
+  margin-bottom: 10px;
+}
+
+
+.finalized-supplier-page {
+  padding: 20px;
+  margin-left: 220px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.supplier-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.supplier-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+ 
+
+/* .chart-container {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+} */
+
+.dashboard-header-row-admin-supplier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -2rem;
+  margin-top: -3rem;
+}
+
+.dashboard-header-buttons-admin-supplier {
+  display: flex;
+  gap: 12px;
+}
+
+.header-btn-admin-supplier {
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Blue PDF Button */
+.pdf-btn-admin-supplier {
+  background-color: #007bff;
+  color: #fff;
+}
+.pdf-btn-admin-supplier:hover {
+  background-color: #0056b3;
+}
+
+/* Red Sign Out Button */
+.signout-btn-admin-supplier {
+  background-color: #dc3545;
+  color: #fff;
+}
+.signout-btn-admin-supplier:hover {
+  background-color: #b02a37;
+}
+
+.breadcrumb-nav {
+  font-size: 14px;
+  margin: 8px 30px 10px 0px;
+  color: #666;
+}
+
+.breadcrumb-link {
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 4px;
+}
+
+.breadcrumb-current {
+  color: #888;
+}
+
+.chart-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+.chart-grid {
+  grid-template-columns: 1fr;
+}
+}
+
+.dashboard-charts-row {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+margin-bottom: 30px;
+justify-content: space-between;
+}
+
+.chart-container-bar-chart {
+background: white;
+padding: 25px;
+border-radius: 16px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+flex: 1;
+min-width: 320px;
+max-width: 70%;
+}
+
+.chart-container-pie-chart {
+background: white;
+padding: 25px;
+border-radius: 16px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+flex: 1;
+min-width: 320px;
+max-width: 40%;
+}
+
+.chart-title {
+text-align: center;
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 10px;
+}
+

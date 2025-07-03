@@ -1,0 +1,2603 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ebebeb;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+} 
+
+body::-webkit-scrollbar {
+  display: none;
+} 
+
+/* Main Container */
+.maincontainer {
+  height: 89vh;
+  width: 86vw;
+  overflow: hidden;
+  margin-top: 0rem;
+  /* Reduce this if needed */
+  margin-left: 215px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1000;
+  /* Lower than top-bar */
+  background-color: #ebebeb;
+}
+
+.productmaincontainer {
+  height: 89vh;
+  width: 86vw;
+  overflow: hidden;
+  margin-top: 0;
+  margin-left: 215px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1000;
+  background-color: #ebebeb;
+}
+
+/* Top Switch Section */
+.switch {
+  width: 100vw;
+  height: 2rem;
+  display: flex;
+  border-bottom: 1px solid #c4c2c2;
+  cursor: pointer;
+}
+
+.s1main,
+.s2main {
+  width: 43vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Default styling for switch tabs */
+.s1sub,
+.s2sub {
+  width: 15vw;
+  height: 2rem;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+/* Hover state: change text and border to #ff6201 */
+.s1main:hover .s1sub,
+.s2main:hover .s2sub {
+  color: #ff6201;
+  border-bottom-color: #ff6201;
+}
+
+/* Active state: if the active class is applied on the parent element */
+.s1main.active .s1sub,
+.s2main.active .s2sub {
+  color: #ff6201;
+  border-bottom-color: #ff6201;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  width: 100vw;
+  height: 4vh;
+  margin-top: 0.5rem;
+  align-content: center;
+  font-size: x-small;
+  padding-left: 2rem;
+}
+
+/* Breadcrumbs */
+.productbreadcrumbs {
+  width: 100vw;
+  height: 4vh;
+  margin-top: 0.5rem;
+  font-size: x-small;
+  padding-left: 2rem;
+}
+
+/* Page Heading */
+.heading {
+  width: 100vw;
+  height: 4vh;
+  font-size: larger;
+  align-content: center;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+
+/* Category → Slots */
+.slots-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 8rem;
+}
+
+.slots {
+  display: flex;
+  column-gap: 3rem;
+  width: 77.4vw;
+  height: 17vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  margin-left: 4.5rem;
+  /* padding: 0 0.2rem 0 0.5rem; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.slots::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll Buttons */
+.scroll-left,
+.scroll-right {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease, transform 0.2s;
+}
+.scroll-left:hover,
+.scroll-right:hover {
+  transform: translateY(-50%) scale(1.1);
+  border: 1px solid #ff6201;
+}
+.scroll-left { left: 15px; }
+.scroll-right { right: 15px; }
+.scroll-left i,
+.scroll-right i {
+  font-size: 0.7rem;
+}
+
+/* Category Tab Cards */
+.card {
+  border: 2px solid white;
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 15px;
+  flex: 0 0 auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  cursor: pointer;
+  align-items: center;
+  color: black;
+  margin-bottom: 1rem;
+}
+.card:focus,
+.card:active {
+  border: 2px solid #ff6201;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  font-weight: bolder;
+}
+
+/* Category Card Content */
+.img {
+  height: 3.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 8px;
+  text-align: center;
+  margin: 0.3rem 0 0.1rem;
+  letter-spacing: -0.15px;
+}
+
+
+/* Scroll Buttons */
+.scroll-left,
+.scroll-right {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease, transform 0.2s;
+}
+.scroll-left:hover,
+.scroll-right:hover {
+  transform: translateY(-50%) scale(1.1);
+  border: 1px solid #ff6201;
+}
+.scroll-left { left: 15px; }
+.scroll-right { right: 15px; }
+.scroll-left i,
+.scroll-right i {
+  font-size: 0.7rem;
+}
+
+/* Full View */
+.full_view {
+  width: 86vw;
+  height: 56vh;
+  display: flex;
+}
+
+/* .changecont {
+  
+  height: 52.5vh;
+  width: 60vw;
+  margin-top: 0.5rem;
+  margin-left: 2vw;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* .changecont1 {
+  width: 60vw;
+  max-height: 51vh;
+  
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  
+} */
+
+.fixedcont {
+  /* border: 2px solid green; */
+  height: 51vh;
+  width: 22vw;
+  margin-top: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* New styles for slider and container switching */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%;
+}
+
+.switchcontainer1{
+  width: 50%;
+  /* overflow-y: scroll; */
+}
+
+.switchcontainer2 {
+  width: 50%;
+}
+
+.headingchange {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  color: Black;
+  font-weight: bolder;
+}
+
+/* Original scrollcards border & height */
+/* .scrollcards {
+  height: 100%;
+}
+
+
+/* Product Cards Grid */
+.scrollcards {
+  height: 100%;
+  overflow-y: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+}
+.scrollcards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Product Card */
+.scards {
+  width: 17.5rem;
+  height: 10rem;
+  background: #fefefe;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.scards:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Product Card Layout */
+.left-section {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-image {
+  max-width: 90px;
+  max-height: 90px;
+  border-radius: 6px;
+}
+.right-section {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  max-width: 90px;
+  max-height: 90px;
+  border-radius: 6px;
+}
+
+/* Right section for text */
+.right-section {
+  /* border: 2px solid black; */
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+  margin-left: 1rem;
+  height: fit-content;
+  height: 9rem;
+}
+
+/* Top row: "Last Edited X ago" with clock icon */
+.top-row {
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  color: #666;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0%;
+}
+
+.last-edited {
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+
+.toprowicon {
+  margin-right: 0.4rem;
+}
+
+/* Price, bigger text */
+.card-price {
+  /* border: 2px solid black; */
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 0;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Product name */
+.card-name {
+  /* border: 2px solid black; */
+  font-size: 0.8rem;
+  font-weight: normal;
+  width: 100%;
+  margin: 0%;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -0.3rem;
+}
+
+/* Weight */
+.card-weight {
+  /* border: 2px solid black; */
+  font-size: 0.7rem;
+  color: #777;
+  width: 100%;
+  margin: 0%;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Badges row */
+.card-badges {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  height: 1rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0.3rem;
+}
+
+/* Discount badge */
+.discount-badge {
+  background-color: #ff6201;
+  color: white;
+  padding: 1px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  width: 2rem;
+}
+
+/* Availability badge */
+.availability-badge {
+  background-color: #ff6201;
+  color: white;
+  font-weight: bold;
+  padding: 1px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  width: 4rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Edit button with orange border */
+.card-edit-button {
+  margin-top: auto;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ff6201;
+  background-color: transparent;
+  color: #ff6201;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: 9rem;
+  margin-top: 0.3rem;
+}
+
+.card-edit-button:hover {
+  background-color: #ffe9d8;
+}
+
+.fixedcont-inner {
+  padding: 1rem;
+}
+
+.fixedcont-img {
+  width: 100px;
+}
+
+.fixedcont-title {
+  margin: 0 0 1rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fixedcont-lastEdited {
+  display: flex;
+  align-items: center;
+  color: #FF6201;
+  margin-top: -1.3rem;
+  margin-bottom: 1rem;
+}
+
+.fixedcont-lastEdited i {
+  margin-right: 0.25rem;
+}
+
+.fixedcont-label {
+  font-weight: bold;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.fixedcont-input {
+  width: 100%;
+  padding-bottom: 1rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.fixedcont-availability {
+  display: inline-flex;
+  gap: 1rem;
+  /* Optional spacing between labels */
+}
+
+.fixedcont-availability label {
+  color: #ff6201;
+  cursor: pointer;
+}
+
+.fixedcont-availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+
+.fixedcont-availability label {
+  color: #ff6201;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Custom radio styling */
+.fixedcont-availability input[type="radio"] {
+  -webkit-appearance: radio;
+  appearance: radio;
+  accent-color: #ff6201;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.4rem;
+  border: 2px solid #ff6201;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+.fixedcont-availability input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 2px auto;
+  border-radius: 50%;
+  background-color: #ff6201;
+}
+
+.fixedcont-btn {
+  background-color: #FF6201;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fixedtop {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+  margin-left: 1rem;
+}
+
+.fixedtopoinner {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.fixe4dtopHeading {
+  margin-bottom: 0.5rem;
+}
+
+.price-input-wrapper {
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  height: 2.5rem;
+  width: 17rem;
+  margin-left: 1rem;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fixedcont-label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0 0.5rem;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fixedcont-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.7rem;
+  color: #333;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ///////////////////////////////////////////////////////// */
+/* Container styling (already inlined width: 50% in JSX) */
+/* Category + Heading */
+
+/* Vehicle Type Tabs (icons across the top) */
+.headingfleet {
+  height: 4vh;
+  font-size: larger;
+  align-content: center;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+
+.vehicle-type-tabs {
+  transition: "all 0.3s ease";
+  display: flex;
+  margin-top: 0.5rem;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  text-align: center;
+  padding-right: 1rem;
+}
+
+.vehicle-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.vehicle-type img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.3rem;
+}
+
+/* Highlight active vehicle type */
+.vehicle-type.active {
+  color: #fa6900;
+  font-weight: bold;
+  border-bottom: 2px solid #ff6201;
+}
+
+/* Selected Vehicle Info Row */
+.vehicle-info {
+  width: 82vw;
+  max-width: 83vw;
+  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  border-radius: 10px;
+  height: 5.5rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.vehicle-info .info-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  font-size: 1.1rem;
+  padding-right: 2rem;
+  border-right: 1px solid black;
+  height: 2.5rem;
+}
+
+.info-item-rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  font-size: 1.1rem;
+  padding-right: 2rem;
+  height: 2.5rem;
+  /* border-right: 1px solid black; */
+}
+
+.item-count {
+  color: #ff6201;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.info-item-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2rem;
+  border-right: 1px solid black;
+  font-size: 1.1rem;
+  margin-left: -1rem;
+  height: 2.5rem;
+}
+
+.align-container {
+  display: flex;
+  flex-direction: row;       /* Arrange children in a row */
+  flex-wrap: nowrap;         /* Prevent items from wrapping onto a new line */
+  align-items: center;       /* Vertically center items */
+  justify-content: flex-start; /* Align items to the left */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 58vw;
+  background-color: #f9f9f9;
+  padding: 0.8rem 0.8rem 0.8rem 1.5rem; /* Top, right, bottom, left */
+  gap: 1.6rem;
+  height: 5.5rem;
+  text-align: center;
+}
+
+
+.button-div-update {
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-button {
+  background-color: #fa6900;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
+  display: block;
+  margin-top: auto;
+  margin-left: -5rem;
+}
+
+.vehicle-switch-container {
+  position: relative;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.button-div-update {
+  margin-left: 1rem;
+}
+
+/* Table Container */
+.table-container {
+  transition: "all 0.3s ease";
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  border-radius: 5px;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.table-container th {
+  background-color: #f3f3f3;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.see-more-link {
+  color: #fa6900;
+  text-decoration: none;
+}
+
+.see-more-link:hover {
+  text-decoration: underline;
+}
+
+.topbarfleet {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.fleettopcont {
+  display: flex;
+  flex-direction: column;
+  width: 23vw;
+}
+
+.fleettopcontrol {
+  display: flex;
+  flex-direction: row;
+}
+
+.detailed-ui-container {
+  width: 82vw;
+  height: 54vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-left: 2rem;
+}
+
+.detailed-ui-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detailed-ui-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+
+/* Newly added containers: info-container and metrics-container */
+.info-container{
+  width: 82vw;
+  margin-left: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  
+}
+
+.switch-vehicle-container2 {
+  gap: 1rem;
+  margin-top: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ff6201 #eee;
+  width: 86vw;
+  height: 70vh;
+  overflow-y: scroll; /* Forces vertical scrollbar to always be visible */
+  scroll-behavior: smooth;
+ 
+}
+
+.switch-vehicle-container2::-webkit-scrollbar {
+  width: 8px;
+}
+
+.switch-vehicle-container2::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.switch-vehicle-container2::-webkit-scrollbar-thumb {
+  background: #ff6201;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.switch-vehicle-container2::-webkit-scrollbar-thumb:hover {
+  background: #e65a00;
+  transform: scale(1.05);
+}
+
+/* Remove transform scaling to keep border radius consistent */
+.switch-vehicle-container2::-webkit-scrollbar-thumb:hover,
+.switch-vehicle-container2::-webkit-scrollbar-thumb:active {
+  background: #e65a00;
+  border-radius: 10px;
+}
+
+
+.top-buttons-div {
+  position: fixed;
+  right: 2rem;
+  top: 1.2rem;
+  width: 20rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button1{
+  position: fixed;
+  right: 2rem;
+  top: 0.8rem;
+  
+  width: 9rem;
+  color: #ff6201;
+  background-color: white;
+}
+
+.save-button2 {
+  position: fixed;
+  right: 13rem;
+  top: 0.8rem;
+  width: 9rem;
+  color: white;
+  background-color: #ff6201;
+}
+
+.update-button1 {
+  position: fixed;
+  top: 0.8rem;
+  right: 3rem;
+  width: 9rem;
+  color: #ff6201;
+  background-color: white;
+  
+}
+
+.update-button1:active,
+.update-button1:hover {
+  position: fixed;
+  top: 0.8rem;
+  right:3rem;
+  color: white;
+  background-color: #ff6201;
+}
+
+.save-button2:active,
+.save-button2:hover{
+  position: fixed;
+  right: 13rem;
+  top: 0.8rem;
+  width: 9rem;
+  color: #ff6201;
+  background-color: white;
+}
+
+
+.save-button1:active,
+.save-button1:focus {
+  color: white;
+  background-color: #ff6201;
+  top: 0.8rem;
+  right: 3rem;
+  width: 9rem;
+}
+
+.icon-top {
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  
+}
+
+.user-profile-image {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5px;
+  height: 13rem;
+  width: 9rem;
+  margin-left: 2rem;
+}
+
+.top-row-vehicle {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2rem;
+}
+
+.employment-info-card-block {
+  padding-right: 1rem;
+  margin-left: 1.5rem;
+  width: 16rem;
+  
+}
+
+.info-card-actions {
+  /* border: 2px solid black; */
+  width: 16rem;
+  display: flex;             /* ← make it a flex container */
+  justify-content: center;   /* ← center horizontally */
+  align-items: center;       /* ← center vertically */
+  padding-top: 1rem;
+  /* optional: give it a fixed height if you want more vertical space */
+}
+
+.info-card-actions button {
+  height: 2rem;     /* ensure it respects text-align */
+  font-size: x-small;
+  justify-content: center;
+  display: flex;
+  width: 15rem;
+  background-color: red;
+  align-items: center;
+}
+
+
+.info-card-actions button::after,
+.info-card-actions button:hover {
+  height: 2rem;     /* ensure it respects text-align */
+  font-size: xX-small;
+  justify-content: center;
+  display: flex;
+  width: 15rem;
+  color: red;
+  background-color: white;
+  border: 2px solid red;
+  align-items: center;
+}
+
+
+/* full‑screen backdrop with gentle blur */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  padding-left: 10vw;
+}
+
+/* white card with fade‑in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 60vh;
+  
+  
+}
+
+/* header with title and close icon */
+.modal-header {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  padding: 1rem;
+  /* background: #f5f5f5; */
+  /* border-bottom: 1px solid #ddd; */
+  
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* body with select */
+.modal-body {
+  padding: 1rem;
+  font-size: 1rem;
+}
+.modal-body p {
+  margin-bottom: 0.75rem;
+}
+.modal-body select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* footer with action buttons */
+.modal-footer {
+  display: flex;
+  flex-direction: column;    /* stack vertically */
+  align-items: stretch;      /* buttons will fill the width of the footer */
+  gap: 0.75rem;              /* space between buttons */
+  padding: 1rem;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.modal-body-buttons {
+  display: flex;            /* enable flex layout */
+  flex-direction: column;   /* stack them vertically */
+  align-items: center;      /* center each button horizontally */
+  justify-content: center;  /* center them vertically if you add a height */
+  margin-top: 2rem;
+}
+
+/* ensure buttons size to their content */
+.modal-body-buttons .btn-delete,
+.modal-body-buttons .btn-cancel {
+  width: auto;              /* allows them to shrink to text width */
+  min-width: 150px;         /* optional: give them a comfortable minimum */
+  padding: 0.75rem 1.5rem;
+}
+
+
+/* Make each button span the content width */
+.modal-footer .btn-delete,
+.modal-footer .btn-cancel {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+  
+}
+.btn-delete:disabled {
+  background: #f1a1a1;
+  cursor: not-allowed;
+}
+.btn-cancel {
+  background: #ffffff;
+  color: #333;
+  margin-top: -1rem;
+}
+
+
+
+
+.personal-info-card-block {
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+
+}
+
+.fleet-info-card-block {
+  padding-right: 1rem;
+  margin-left: -1rem;
+  width: 15rem;
+  
+}
+
+.info-card-titile {
+  margin-bottom: 0.5rem;
+  width: fit-content;
+}
+
+.info-card-detail-row {
+  margin-bottom: 0.5rem;
+  width: 17rem;
+  padding-left: -3rem;
+}
+
+
+
+.info-card-detail-row p {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -0.1rem;
+}
+
+.info-card-detail-row-short p {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -0.1rem;
+}
+
+.info-card-detail-row-short {
+  margin-bottom: 0.5rem;
+  width: 16rem;
+  padding-left: -5rem;
+  
+}
+
+.image-buttons {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 12rem;
+  height: 5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.upload-button-image {
+  width: 8rem;
+  height: 2rem;
+  padding: 5px;
+  border: none;
+  background-color: #ff6201;
+  
+  transition: background-color 0.3s;
+  /* Remove negative margin */
+  margin-top: 0.1rem;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.remove-button-image {
+  width: 8rem;
+  height: 2rem;
+  padding: 5px;
+  border: 2px solid #ff6201;
+  background-color: #fff;
+  /* Remove negative margin */
+  margin-top: -1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.upload-button-image:active,
+.upload-button-image:focus {
+  background-color: #ff6201;
+}
+
+
+
+.upload-button-image img {
+  margin-right: 5px;
+  height: 80%;
+  object-fit: contain;
+}
+
+.remove-button-image img{
+  
+  height: 80%;
+  object-fit: contain;
+}
+
+.upload-button-text {
+  color: White;
+}
+
+.delete-button-text {
+  color: #ff6201;
+}
+
+.info-value-tp {
+  color: #ff6201;
+  font-size: 0.9rem;
+}
+
+.info-value-driver {
+  color: green;
+  font-size: 0.9rem;
+}
+
+.info-label {
+  font-weight: lighter;
+}
+
+.info-value {
+  font-weight: bold;
+}
+
+.licen-status-label,
+.assigned-status-label {
+  color: white;
+  width: 8rem;
+  align-items: center;
+  text-align: center;
+  border-radius: 7px;
+  font-weight: lighter;
+}
+
+.licen-status-label {
+  background-color: green;
+}
+
+.assigned-status-label {
+  background-color: #ff6201;
+}
+
+.info-label,
+.info-value,
+.info-value-tp {
+  font-size: 0.9rem;
+}
+
+.info-value-tp-editable {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff6201;
+}
+
+.info-value-editable {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Editable Fields Styling for Update Mode */
+input.info-value-editable,
+input.info-value-tp-editable {
+  background-color: #eee;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0.07rem;
+  border: none;
+  width: 9.5rem;
+  text-align: right;
+}
+
+
+
+.metrics-container {
+  width: 82vw;
+  margin-left: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  
+}
+
+.metrics-slidebar{
+  
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 2.25rem;
+  
+  
+}
+
+.metric-slide-label,
+.metric-slide-labe2,.metric-slide-labe3,.metric-slide-labe4{
+  color: #777;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+
+.metric-slide-label:active,
+.metric-slide-label:hover,
+.metric-slide-labe2:active,
+.metric-slide-labe2:hover,
+.metric-slide-labe3:active,
+.metric-slide-labe3:hover,
+.metric-slide-labe4:active,
+.metric-slide-labe4:hover
+{
+  color: #ff6201;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 2px solid #ff6201;
+  cursor: pointer;
+}
+
+
+
+
+/* ---------------------------
+   Metrics Monitoring Tabs Styling
+------------------------------ */
+.metrics-slidebar {
+  display: flex;
+  gap: 1rem;
+  /* border-bottom: 2px solid #ccc; */
+  margin-bottom: 0.5rem;
+}
+
+.metrics-slidebar div {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.metrics-slidebar div.active {
+  border-bottom-color: #ff6201;
+  font-weight: bold;
+  color: black;
+}
+
+.metrics-content > div {
+  display: none;
+  animation: fadeIn 0.3s;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metrics-content > div.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.metrics-content{
+  height: fit-content;
+}
+
+
+/* recent trip content */
+.recent-trip-content{
+  /* border: 2px solid black; */
+}
+
+.recent-trip-content-topbar{
+display: flex;
+flex-direction: row;
+height: 3.5rem;
+}
+
+.topbar-user-info{
+  
+  height: 3.5rem;
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+padding: 0.5rem;
+}
+
+.topbar-user-details{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.2rem;
+  
+}
+
+.topbar-date-info{
+  /* border: 2px solid black; */
+  height: 3.5rem;
+  width: 18vw;
+  border-left: 2px solid black;
+}
+
+.recent-trip-content-data{
+  /* border: 2px solid green; */
+  height: 4rem;
+  margin-top: 0.1rem;
+  display: flex;
+flex-direction: row;
+/* border: 1px solid black; */
+gap: 4rem;
+height: 3.8rem;
+background-color: white;
+padding-left: 2rem;
+padding-right: 0.5rem;
+border-radius: 8px;
+box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recent-trip-content-details{
+  /* border: 2px solid red; */
+  height: fit-content;
+}
+
+
+.topbar-user-profileimg{
+margin-left: 0.5rem;
+}
+
+.recent-trip-content-info-tag{
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 1.5rem;
+  font-size: small;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: #777;
+}
+
+.topbar-date-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-date-line1{
+  font-weight: bold;
+  font-size: large;
+}
+
+.topbar-date-line2{
+
+}
+
+/* trip data bar */
+.recent-trip-content-data{
+
+
+}
+
+.trip-data{
+  display: flex;
+flex-direction: column;
+
+font-size: small;
+justify-content: center;
+align-items: center;
+
+}
+
+.trip-data-heading{
+  font-weight: bold;
+color: #777;
+}
+
+.trip-data-sub{
+  font-weight: bold;
+  color: black;
+  margin-top: 0.2rem;
+}
+
+/* complaint-div */
+.complaint-full-div{
+  
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.complaint-table {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden; /* ensures the border radius is visible */
+  font-family: Arial, sans-serif;
+}
+
+.complaint-head, .complaint-row {
+  display: flex;
+}
+
+.complaint-head-item{
+  justify-content: center;
+  align-items: center;
+}
+
+.complaint-head {
+  background-color: #ff6201;
+  font-weight: bold;
+  
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
+
+.complaint-head-item, .complaint-cell {
+  flex: 1;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.complaint-cell{
+  color: #777;
+  font-size: small;
+  font-weight: bold;
+}
+
+.complaint-head-item:last-child, .complaint-cell:last-child {
+  border-right: none;
+}
+
+/* Make the Complaint column wider */
+.wide {
+  flex: 2;
+}
+
+/* Optionally remove the bottom border from the last row */
+.complaint-row:last-child .complaint-cell {
+  border-bottom: none;
+}
+
+
+.driver-availability-div{
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  gap: 4.2rem;
+  padding: 1rem;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.driver-availability-data{
+  /* border: 2px solid black; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.driver-availability-data-details{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-availability-data-head{
+font-size: small;
+font-weight: bold;
+color: #777 ;
+}
+
+.driver-availability-data-body{
+  font-size: small;
+  font-weight: bold;
+  color: black ;
+}
+
+.driver-availability-data-icon{
+  margin-right: 0.5rem;
+  color: #ff6201;
+}
+
+/* driver performance */
+.driver-performance-div{
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+.driver-performance-div-data{
+  /* border: 2px solid red; */
+  width: 50vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-performance-div-graph{
+  /* border: 2px solid green; */
+  width: 50vw;
+  height: 10vh;
+}
+
+.driver-performance-div-data-info{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  
+  gap: 2rem;
+}
+
+.driver-performance-div-data-info-container{
+  /* border: 2px solid blue; */
+  justify-items: center;
+  align-items: center;
+}
+
+.driver-performance-div-data-info-head{
+color: #777;
+font-weight: bold;
+font-size: small;
+}
+
+.driver-performance-div-data-info-detail{
+color: black;
+font-weight: bold;
+font-size: small;
+}
+
+.driver-performance-table {
+  width: 50vw;
+  border-collapse: collapse; /* Ensures no spacing between cells */
+  padding: 1rem;
+}
+
+.driver-performance-table td {
+  padding: 1rem;           /* Adjusts spacing within cells */
+  border: none;            /* Removes any borders */
+  text-align: center;      /* Centers text horizontally */
+  vertical-align: middle;  /* Centers content vertically */
+  
+}
+
+.driver-performance-div-graph {
+  width: 40vw;                /* You can use px, %, or any responsive unit */
+  height: 300px;              /* The height of the chart area */
+  margin: 1rem auto;          /* Center it horizontally */
+  background-color: #f6f6f6;  /* Example background to mimic your image */
+  border-radius: 10px;        /* Rounded corners */
+  padding: 1rem;              /* Space around the chart canvas */
+  box-sizing: border-box;
+  border: 2px solid black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  /* Optional subtle shadow: */
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.driver-performance-div-data-info-block{
+  color: white;
+font-weight: bold;
+font-size:small;
+background-color: green;
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+border-radius: 10px;
+
+width: 7rem;
+margin-left: 2rem;
+align-items: center;
+justify-content: center;
+}
+
+
+/* register-new-driver-button */
+.register-new-driver{
+/* border: 2px solid black; */
+width: 7rem;
+height: 5rem;
+align-items: center;
+justify-content: center;
+display: flex;
+flex-direction: column;
+cursor: pointer;
+padding-top: 0.6rem;
+}
+
+
+.register-new-driver-button{
+  /* border: 2px solid black; */
+  align-items: center;
+justify-content: center;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+height: 4.5rem;
+width: 4.5rem;
+background-color: white;
+margin-left: 1.4rem;
+}
+
+.register-new-driver-text{
+  align-items: center;
+  justify-content: center;
+  font-size: x-small;
+  color: #ff6201;
+  text-align: center;
+}
+
+.register-new-driver-image{
+  margin-bottom: 0.2rem;
+  color: #ff6201;
+}
+
+.register-new-driver-button:active,
+.register-new-driver-button:hover{
+  align-items: center;
+justify-content: center;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+height: 4.5rem;
+width: 4.5rem;
+background-color: #ff6201;
+color: white;
+}
+
+.register-new-driver-text:active,
+.register-new-driver-text:hover{
+  align-items: center;
+  justify-content: center;
+  font-size: x-small;
+  color: white;
+  text-align: center;
+}
+
+.register-new-driver-image:active,
+.register-new-driver-image:hover{
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+/* Apply the desired styles when hovering, actively pressing,
+   or when the register-new-driver container has an "active" class */
+   .register-new-driver:hover .register-new-driver-button,
+   .register-new-driver:active .register-new-driver-button,
+   .register-new-driver.active .register-new-driver-button {
+     background-color: #ff6201;
+     color: white;
+   }
+   
+   .register-new-driver:hover .register-new-driver-text,
+   .register-new-driver:active .register-new-driver-text,
+   .register-new-driver.active .register-new-driver-text {
+     color: white;
+   }
+   
+   .register-new-driver:hover .register-new-driver-image,
+   .register-new-driver:active .register-new-driver-image,
+   .register-new-driver.active .register-new-driver-image {
+     color: white;
+   }
+   
+   .register-new-driver.active .register-new-driver-button {
+    background-color: #ff6201;
+    color: white;
+  }
+  
+  .register-new-driver.active .register-new-driver-text {
+    color: white;
+  }
+  
+  .register-new-driver.active .register-new-driver-image {
+    color: white;
+  }
+  
+  .register-new-driver:focus .register-new-driver-button,
+.register-new-driver:active .register-new-driver-button {
+  background-color: #ff6201;
+  color: white;
+}
+
+.register-new-driver:focus .register-new-driver-text,
+.register-new-driver:active .register-new-driver-text {
+  color: white;
+}
+
+.register-new-driver:focus .register-new-driver-image,
+.register-new-driver:active .register-new-driver-image {
+  color: white;
+}
+
+
+.register-driver-copy-container {
+  margin-left: 2rem;
+  background-color: white;
+  width: 82vw;
+  border-radius: 20px;
+  padding: 1rem;
+
+  /* fixed height & include padding */
+  height: 66vh;
+  box-sizing: border-box;
+
+  /* scroll only when needed */
+  overflow-y: auto;
+
+  /* disable “scroll anchoring” so adding content at the bottom
+     doesn’t push the top out of view */
+  overflow-anchor: none;
+
+  /* optional: prevent this container’s scroll from “bleeding” 
+     into the page’s scroll when you hit the top/bottom */
+  overscroll-behavior: contain;
+
+  /* remove any smooth-scroll on the container itself */
+  scroll-behavior: auto;
+}
+
+.register-driver-scroll{
+  max-height: 100vh;
+}
+
+
+
+
+.register-driver-copy-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.register-driver-copy-container::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.register-driver-copy-container::-webkit-scrollbar-thumb {
+  background: #ff6201;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.register-driver-copy-container::-webkit-scrollbar-thumb:hover {
+  background: #e65a00;
+  transform: scale(1.05);
+}
+
+/* Remove transform scaling to keep border radius consistent */
+.register-driver-copy-container::-webkit-scrollbar-thumb:hover,
+.register-driver-copy-container::-webkit-scrollbar-thumb:active {
+  background: #e65a00;
+  border-radius: 10px;
+}
+
+
+.add-driver-top-row-vehicle{
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid black; */
+  padding-left: 3rem;
+  padding-right: 3rem;
+  
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+  gap: 4rem;
+}
+
+
+.register-driver-icon-top{
+  height: 2.5rem;
+  
+  margin-top: -0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  
+}
+
+
+.add-driver-personal-info-card-block{
+  /* border: 2px solid green; */
+  width: 25rem;
+}
+
+.add-driver-fleet-info-card-block{
+  /* border: 2px solid red; */
+  
+  width: 24rem;
+}
+
+.add-driver-top-row-vehicle-section-devider{
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  /* border: 2px solid black; */
+}
+
+.add-driver-info-card-detail-row,
+.add-driver-info-card-detail-row-short{
+  margin-top: 1rem;
+}
+
+
+
+
+.add-driver-info-label {
+  display: inline-block;   /* so width applies */
+  width: 14rem;
+  text-align: left;
+  padding-top: 1rem;
+  margin-left: -7rem;
+  /* remove align-items (only applies on flex containers) */
+}
+
+.add-driver-info-label-vehicle {
+  display: inline-block;   /* so width applies */
+  width: 14rem;
+  text-align: left;
+  padding-top: 1rem;
+  margin-left: -8.5rem;
+  /* remove align-items (only applies on flex containers) */
+}
+/* Ensure all elements use border-box for consistency */
+
+
+
+
+
+.add-driver-personal-info-card-block, 
+.add-driver-fleet-info-card-block{
+  padding: 1rem;
+}
+
+/* Custom radio styling */
+/* Custom radio styling for add-driver-info-card-detail-row-short-radio */
+/* Custom radio styling for add-driver-info-card-detail-row-short-radio */
+.add-driver-info-card-detail-row-short-radio input[type="radio"] {
+  -webkit-appearance: radio;
+  appearance: radio;
+  accent-color: #ff6201;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.4rem;
+  border: 2px solid #ff6201;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+.add-driver-info-card-detail-row-short-radio input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 2px auto;
+  border-radius: 50%;
+  background-color: #ff6201;
+}
+
+.add-driver-info-card-detail-row-short-radio {
+  position: relative;
+  z-index: 9999;
+  display: inline-block;
+  width: -moz-fit-content;    /* Firefox */
+  width: -webkit-fit-content; /* Chrome, Safari */
+  width: fit-content;         /* Standard */
+}
+
+
+/* Additional styling for layout and text */
+.add-driver-info-card-detail-row-short-radio label {
+  margin-right: 1rem;
+  font-size: small;
+  color: #777;
+  font-weight: bold;
+}
+
+.add-driver-top-row-vehicle-img{
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.add-driver-image-buttons {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 12rem;
+  height: 5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.add-driver-upload-button-image {
+  width: 8rem;
+  height: 2rem;
+  padding: 5px;
+  border: none;
+  background-color: #ff6201;
+  
+  transition: background-color 0.3s;
+  /* Remove negative margin */
+  margin-top: 0.1rem;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.add-driver-remove-button-image {
+  width: 8rem;
+  height: 2rem;
+  padding: 5px;
+  border: 2px solid #ff6201;
+  background-color: #fff;
+  /* Remove negative margin */
+  margin-top: -1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.add-driver-upload-button-image:active,
+.add-driver-upload-button-image:focus {
+  background-color: #ff6201;
+}
+
+
+
+.add-driver-upload-button-image img {
+  margin-right: 5px;
+  height: 80%;
+  object-fit: contain;
+}
+
+.add-driver-remove-button-image img{
+  
+  height: 80%;
+  object-fit: contain;
+}
+
+.add-driver-upload-button-text {
+  color: White;
+}
+
+.add-driver-delete-button-text {
+  color: #ff6201;
+}
+
+.add-driver-top-row-vehicle-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+  padding-left: 0.5rem;
+}
+
+.add-driver-user-profile-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+
+.register-driver-icon-top{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
+
+.add-driver-update-button-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-driver-fleet-info-card-block .error-message {
+  margin-left: 2rem;
+  text-align: left;
+}
+
+.add-driver-info-card-detail-row-short {
+  margin-bottom: 0.5rem;
+  width: 25rem;
+  padding-left: -5rem;
+}
+
+
+
+
+/* .search-div-holder{
+  border: 2px solid black;
+  height: 3rem;
+  width: 11rem;
+} */
+
+
+
+
+
+/* Floating Labels & Inputs */
+.price-input-wrapper {
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  width: 17rem;
+  height: 2.5rem;
+  margin: 0 0 1.5rem 1rem;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+.fixedcont-label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 0.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+.fixedcont-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Availability Radios */
+.fixedcont-availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+.fixedcont-availability label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #ff6201;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.fixedcont-availability input[type="radio"] {
+  -webkit-appearance: radio;
+  appearance: radio;
+  accent-color: #ff6201;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ff6201;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fixedcont-availability input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 2px auto;
+  border-radius: 50%;
+  background-color: #ff6201;
+}
+
+/* Submit Button */
+.fixedcont-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  background: #ff6201;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Heading with Buttons */
+.heading-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  padding: 1rem 0.5rem 0 2rem;
+  margin-top: -40px;
+  height: 5.3rem;
+}
+.heading-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+.top-buttons {
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 5rem;
+}
+
+/* “Add” & “View” Buttons */
+.add-product-button,
+.download-report-button {
+  background: #ff6201;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s ease;
+}
+.add-product-button:hover {
+  background: #e85c00;
+}
+.plus-icon {
+  font-size: 1.2rem;
+  margin-top: -1px;
+}
+.add-label {
+  font-size: 0.6rem;
+}
+
+
+/* Search Bar */
+.search-function {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: -180px;
+  margin-top: -22px;
+}
+.search-input {
+  padding: 0.6rem 1rem 0.6rem 2.2rem;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 10px center;
+  background-size: 18px 18px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.search-input::placeholder {
+  color: #6e6e6e;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+.search-button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-top: 33px;
+  background: white;
+  color: #ff6201;
+  border: 2px solid #ff6201;
+}
+.search-button:hover {
+  background: #e95c00;
+  color: white;
+}
+
+
+/* Fixed‐side Panel */
+.fixedcont1 {
+  width: 22vw;
+  height: 51vh;
+  margin: 0.5rem 0 0 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.inner {
+  position: relative;
+  height: 22.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.inner::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url("../../components/New Project (16) (2).png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+.innerlottie {
+  margin-top: -5rem;
+}
+.innersecondline {
+  text-align: center;
+  font-weight: bold;
+  color: #ff6201;
+  margin-top: -5rem;
+}
+
+.fixedcont-inner {
+  padding: 1rem;
+}
+.fixe4dtopHeading {
+  margin-bottom: 0.5rem;
+}
+
+/* Delete Button */
+.delete-btn {
+  position: relative;
+  top: -2.5rem;
+  left: 13.5rem;
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+.delete-btn i,
+.delete-btn .delete-text {
+  pointer-events: none;
+}
+.delete-btn:hover {
+  background: rgba(255,0,0,0.1);
+}
+.delete-btn:focus {
+  background: white;
+  color: red;
+}
+
+/* Edit Form Top */
+.fixedtop {
+  display: flex;
+  gap: 1rem;
+  margin: -3.5rem 0 1rem 1rem;
+}
+.fixedtopoinner {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Full View */
+.full_view {
+  width: 86vw;
+  height: 56vh;
+  display: flex;
+}
+.changecont1 {
+  width: 60vw;
+  height: 50vh;
+  margin: 0.5rem 0 0 2vw;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.headingchange {
+  margin: 0.5rem 0 0.5rem 3rem;
+  color: black;
+  font-weight: bolder;
+}
+
+
+
+/* Product Cards Grid */
+.scrollcards {
+  height: 100%;
+  overflow-y: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+ 
+
+}
+.scrollcards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Product Card */
+.scards {
+  width: 17.5rem;
+  height: 10rem;
+  background: #fefefe;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.scards:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Product Card Layout */
+.left-section {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-image {
+  max-width: 90px;
+  max-height: 90px;
+  border-radius: 6px;
+}
+.right-section {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
