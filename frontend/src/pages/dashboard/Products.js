@@ -144,7 +144,7 @@ const Product = () => {
   // At the top of your Product component, alongside your other handlers:
   const handleDownloadPdf = async () => {
     try {
-      const res = await fetch("http://localhost:8090/api/catalog/products/pdf", {
+      const res = await fetch("https://project-shopcart-production.up.railway.app/api/catalog/products/pdf", {
         method: "GET",
       });
       if (!res.ok) throw new Error("Network response was not ok");

@@ -12,7 +12,7 @@ const UpdateOrderForm = () => {
 
   // ✅ Fetch order data
   useEffect(() => {
-    axios.get(`http://localhost:8090/api/request-orders/${id}`)
+    axios.get(`https://project-shopcart-production.up.railway.app/api/request-orders/${id}`)
       .then((res) => {
         console.log("✅ Order fetched:", res.data);
         setOrder(res.data);  // <- changed
@@ -36,7 +36,7 @@ const UpdateOrderForm = () => {
         orderedQuantity
       };
 
-      await axios.put(`http://localhost:8090/api/request-orders/${id}`, updatedData);
+      await axios.put(`https://project-shopcart-production.up.railway.app/api/request-orders/${id}`, updatedData);
       alert('✅ Order updated successfully!');
       navigate('/my-orders');
     } catch (error) {

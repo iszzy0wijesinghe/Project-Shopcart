@@ -205,7 +205,7 @@ const SupplierForm = () => {
     }
   
     try {
-      await axios.post('http://localhost:8090/api/shop-owner-requests', formData);
+      await axios.post('https://project-shopcart-production.up.railway.app/api/shop-owner-requests', formData);
       setPopupMessage('✅ Supplier request submitted successfully!');
       setShowPopup(true);
       setTimeout(() => {

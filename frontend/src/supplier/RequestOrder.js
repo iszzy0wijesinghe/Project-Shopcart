@@ -13,7 +13,7 @@ const RequestOrderForm = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:8090/api/suppliers/${supplierId}`)
+    axios.get(`https://project-shopcart-production.up.railway.app/api/suppliers/${supplierId}`)
       .then((res) => setSupplier(res.data))
       .catch((err) => console.error("Error fetching supplier details:", err));
   }, [supplierId]);
@@ -43,7 +43,7 @@ const RequestOrderForm = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8090/api/request-orders', {
+      await axios.post('https://project-shopcart-production.up.railway.app/api/request-orders', {
         companyName: supplier.companyName,
         maxQuantity: supplier.lastStockOrder,
         minOrderQuantity: supplier.minOrderQuantity,

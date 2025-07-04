@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8090/api/catalog"; // update with your backend URL
+const API_BASE_URL = "https://project-shopcart-production.up.railway.app/api/catalog"; // update with your backend URL
 
 // Create an axios instance
 const api = axios.create({

@@ -31,7 +31,7 @@ useEffect(() => {
 
       console.log("🍽️ Sending to backend (foodType):", selectedFoodType.value);
 
-      const res = await axios.get('http://localhost:8090/api/suppliers', {
+      const res = await axios.get('https://project-shopcart-production.up.railway.app/api/suppliers', {
         params: { foodType: selectedFoodType.value },
       });
 
@@ -57,7 +57,7 @@ useEffect(() => {
     }
 
     try {
-      const res = await axios.get('http://localhost:8090/api/suppliers/search', {
+      const res = await axios.get('https://project-shopcart-production.up.railway.app/api/suppliers/search', {
         params: { query: trimmed },
       });
 

@@ -20,8 +20,8 @@ const AllSuppliersPage = () => {
 
   const fetchSuppliers = () => {
     const url = searchTerm
-      ? `http://localhost:8090/api/shop-owner-requests/search?search=${searchTerm}`
-      : 'http://localhost:8090/api/shop-owner-requests';
+      ? `https://project-shopcart-production.up.railway.app/api/shop-owner-requests/search?search=${searchTerm}`
+      : 'https://project-shopcart-production.up.railway.app/api/shop-owner-requests';
 
     axios
       .get(url)

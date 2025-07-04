@@ -46,7 +46,7 @@ const UpdateSupplier = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:8090/api/shop-owner-requests/${id}`)
+    axios.get(`https://project-shopcart-production.up.railway.app/api/shop-owner-requests/${id}`)
       .then((res) => setFormData(res.data))
       .catch((err) => console.error("Failed to fetch supplier request", err));
   }, [id]);
@@ -120,7 +120,7 @@ const UpdateSupplier = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8090/api/shop-owner-requests/${id}`, formData);
+      await axios.put(`https://project-shopcart-production.up.railway.app/api/shop-owner-requests/${id}`, formData);
       setPopupMessage('✅ Supplier request updated successfully!');
       setShowPopup(true);
       setTimeout(() => navigate('/supplierDetails'), 2500);

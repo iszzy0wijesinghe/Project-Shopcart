@@ -18,9 +18,10 @@ import custAuthRoutes from "./routes/custRoutes.js";
 const app = express();
 const PORT = process.env.PORT || 8090;
 
+
 app.use(cors({
-    origin: ['http://localhost:8090', 'http://localhost:3000', 'http://localhost:3001'],
-    credentials: true,
+  origin: 'https://project-shopcart.vercel.app/',
+  credentials: true
 }));
 // app.use(httpLogger);
 app.use(express.json( {limit: "100kb"} ));

@@ -18,8 +18,8 @@ const MyOrdersPage = () => {
   const fetchOrders = async () => {
     try {
       const url = searchTerm.trim()
-        ? `http://localhost:8090/api/request-orders/search?search=${encodeURIComponent(searchTerm)}`
-        : `http://localhost:8090/api/request-orders`;
+        ? `https://project-shopcart-production.up.railway.app/api/request-orders/search?search=${encodeURIComponent(searchTerm)}`
+        : `https://project-shopcart-production.up.railway.app/api/request-orders`;
 
       const response = await axios.get(url);
       setOrders(response.data);
@@ -39,7 +39,7 @@ const MyOrdersPage = () => {
 
   const handleDeleteConfirmed = async () => {
     try {
-      await axios.delete(`http://localhost:8090/api/request-orders/${selectedOrderId}`);
+      await axios.delete(`https://project-shopcart-production.up.railway.app/api/request-orders/${selectedOrderId}`);
       setOrders((prev) => prev.filter((order) => order._id !== selectedOrderId));
     } catch (err) {
       console.error("Delete error:", err.message);
@@ -97,8 +97,8 @@ const MyOrdersPage = () => {
           <button
              onClick={() => {
               const url = searchTerm.trim()
-                ? `http://localhost:8090/api/request-orders/pdf?search=${encodeURIComponent(searchTerm)}`
-                : 'http://localhost:8090/api/request-orders/pdf';
+                ? `https://project-shopcart-production.up.railway.app/api/request-orders/pdf?search=${encodeURIComponent(searchTerm)}`
+                : 'https://project-shopcart-production.up.railway.app/api/request-orders/pdf';
               window.open(url, '_blank');
             }}
           >

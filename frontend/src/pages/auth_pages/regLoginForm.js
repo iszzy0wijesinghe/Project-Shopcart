@@ -46,7 +46,7 @@ const RegistrationLoginForm = () => {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
   const [showOtpPopup, setShowOtpPopup] = useState(false);
   const [showLoginOtpPopup, setShowLoginOtpPopup] = useState(false);
-  const [showMap, setShowMap] = useState(false);
+  // const [showMap, setShowMap] = useState(false);
   const [showPasswordMessage, setShowPasswordMessage] = useState(false);
   const [notification, setNotification] = useState({ message: "", type: "" });
   const [locationCaptured, setLocationCaptured] = useState(false);
@@ -60,12 +60,12 @@ const RegistrationLoginForm = () => {
     }, 10000); // Hide notification after 10 seconds
   };
 
-  const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8090';
+  const BASE_URL = process.env.REACT_APP_API_URL || 'https://project-shopcart-production.up.railway.app';
 
   // REGISTRATION HANDLERS
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyCQpCj7Ae-H9XpCowJ8byB0pbYA-BHeG9w",
-  });
+  // const { isLoaded } = useJsApiLoader({
+    
+  // });
 
   const handleRegChange = (e) => {
     const { name, value } = e.target;
@@ -75,17 +75,17 @@ const RegistrationLoginForm = () => {
     }));
   };
 
-  const handleMapClick = (event) => {
-    const lat = event.latLng.lat();
-    const lng = event.latLng.lng();
-    setRegFormData((prevData) => ({
-      ...prevData,
-      location_coords: { lat, lng },
-    }));
-    // Also update the input field with lat and lng
-    document.getElementById("location-input").value = `${lat}, ${lng}`;
-    setShowMap(false); // Hide the map after a location is selected
-  };
+  // const handleMapClick = (event) => {
+  //   const lat = event.latLng.lat();
+  //   const lng = event.latLng.lng();
+  //   setRegFormData((prevData) => ({
+  //     ...prevData,
+  //     location_coords: { lat, lng },
+  //   }));
+  //   // Also update the input field with lat and lng
+  //   document.getElementById("location-input").value = `${lat}, ${lng}`;
+  //   setShowMap(false); // Hide the map after a location is selected
+  // };
 
   const handleRegSubmit = async (e) => {
     e.preventDefault();
@@ -485,7 +485,7 @@ const RegistrationLoginForm = () => {
               </div>
 
               <div className="formflex">
-                <div className="formitem">
+                {/* <div className="formitem">
                   <label htmlFor="location_coords">
                     <b>Google Map Location:</b>
                   </label>
@@ -516,7 +516,7 @@ const RegistrationLoginForm = () => {
                       </GoogleMap>
                     </div>
                   )}
-                </div>
+                </div>  */}
 
                 <div className="formitem">
                   <label htmlFor="store_address">
