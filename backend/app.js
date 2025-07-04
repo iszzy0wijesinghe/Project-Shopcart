@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 8090;
 
 
 app.use(cors({
-  origin: 'https://project-shopcart.vercel.app/',
+  origin: 'https://project-shopcart.vercel.app',
   credentials: true
 }));
 // app.use(httpLogger);
