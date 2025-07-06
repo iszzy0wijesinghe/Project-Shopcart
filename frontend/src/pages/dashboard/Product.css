@@ -2532,7 +2532,7 @@ color: white;
 }
 .changecont1 {
   width: 60vw;
-  height: 50vh;
+  height: 51vh;
   margin: 0.5rem 0 0 2vw;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -2540,7 +2540,7 @@ color: white;
   flex-direction: column;
 }
 .headingchange {
-  margin: 0.5rem 0 0.5rem 3rem;
+  margin: 0.5rem 0 0.5rem 1rem;
   color: black;
   font-weight: bolder;
 }
@@ -2560,6 +2560,7 @@ color: white;
   box-sizing: border-box !important;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+  margin-top: -1rem;
  
 
 }

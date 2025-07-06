@@ -43,7 +43,7 @@ const DashboardMenu = () => {
       <div className="sidebar">
         <div className="sidebar-header">
           <div className="brand-name">
-            <img src="https://res.cloudinary.com/dfejydorr/image/upload/v1751562829/Asset_4_shbgzu.png" alt="logo" width="166px" height="64px" />
+            <img src="https://res.cloudinary.com/dfejydorr/image/upload/v1751562829/Asset_4_shbgzu.png" alt="logo" width="130px" height="auto" />
           </div>
         </div>
 
